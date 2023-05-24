@@ -1,5 +1,7 @@
 module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  target: 'static',
+  ssr: false,
   head: {
     title: 'portfolio',
     htmlAttrs: {
@@ -51,6 +53,10 @@ module.exports = {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/netlify-files',
+
+    // With options
+    ['@nuxtjs/netlify-files', { /* module options */ }]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -62,5 +68,9 @@ module.exports = {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
+
+  generate: {
+    fallback: true
+  }
 
 }
