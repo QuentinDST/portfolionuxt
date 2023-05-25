@@ -37,7 +37,7 @@ export default {
             showExperience: true,
             showEducation: false,
             timelineData: [
-                { id: 1, type: 'experience', title: 'expe', date: '2019 - Present', content: 'Details of Experience 1' },
+                { id: 1, type: 'experience', title: 'Patissier', date: '2012 - 2019', content: 'Patissier' },
                 { id: 2, type: 'education', title: 'Baccalauréat', date: '2007 - Bac littéraire', content: 'Options Théatre' },
                 { id: 3, type: 'education', title: 'Developpeur Web', date: '2023 - Developpeur Web & Web mobile', content: 'Greta Mende' },
             ]
