@@ -1,19 +1,24 @@
 <template>
-    <header
-        :style="{ 'background-image': backgroundImage, width: '100vw', height: '100vh', 'background-size': 'cover', 'max-width': '100%' }">
-        <b-navbar toggleable="lg" type="dark" class="justify-content-center custom-navbar">
+    <header :style="{
+        'background-image': backgroundImage, 'background-size': 'cover',
+        'background-position': 'center',
+        'background-repeat': 'no-repeat',
+        width: '100vw',
+        height: '100vh'
+    }">
+        <b-navbar toggleable="lg" type="dark" class="justify-content-center custom-navbar placeholder">
             <b-navbar-toggle target="nav-collapse" class="mx-auto"></b-navbar-toggle>
-            <b-collapse id="nav-collapse" is-nav>
+            <b-collapse id="nav-collapse" is-nav v-model="isNavOpen">
                 <b-navbar-nav class="text-center w-100">
                     <b-nav-item href="#about" class="nav-link mx-3">A propos</b-nav-item>
                     <b-nav-item href="#skills" class="nav-link mx-3">Skills</b-nav-item>
                     <b-nav-item href="#timeline" class="nav-link mx-3">Formation</b-nav-item>
                     <b-nav-item href="#portfolio" class="nav-link mx-3">Portfolio</b-nav-item>
-                    <b-nav-item href="#" class="nav-link mx-3">Contact</b-nav-item>
+                    <b-nav-item href="#contact" class="nav-link mx-3">Contact</b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
-        <div class="header-title">
+        <div class="header-title" :class="{ 'hide-title': isNavOpen }">
             <h1 class="text-fade-in">DEV.<br>
                 WEB<br>
                 JUNIOR<br>
@@ -26,19 +31,51 @@
 import keyboardImage from '@/assets/images/keyboard-xl.jpg';
 
 export default {
+    data() {
+        return {
+            isNavOpen: false,
+        };
+    },
     computed: {
         backgroundImage() {
             return `url(${keyboardImage})`;
         },
     },
+    mounted() {
+        window.addEventListener('scroll', this.closeNav);
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.closeNav);
+    },
+    methods: {
+        closeNav() {
+            if (this.isNavOpen) {
+                this.isNavOpen = false;
+            }
+        }
+    }
 };
 </script>
 
 <style scoped>
-
-header{
-    margin-bottom: 100px;
+.placeholder {
+    height: 69px;
 }
+
+.hide-title {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.navbar-collapse {
+    transform: translateY(20px);
+}
+
+header {
+    margin-bottom: 100px;
+    background-color: black;
+}
+
 .navbar-nav {
     justify-content: center;
 }
@@ -116,6 +153,17 @@ header{
         display: flex;
         align-items: center;
         justify-content: center;
+        transform: translateY(20px);
+        margin-top: 200px;
+    }
+
+    .header-title h1 {
+    margin-top: 110px;
+}
+
+    .navbar-collapse {
+        transform: translateY(20px);
+        margin-top: 200px;
     }
 
     .header-title {
@@ -123,7 +171,7 @@ header{
     }
 
     header {
-    background-position: center;
-  }
+        background-position: center;
+    }
 }
 </style>

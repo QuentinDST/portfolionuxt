@@ -135,12 +135,21 @@ export default {
   }
 
   .timeline-content H2 {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .timeline-content{
-    font-size: 14px;
+    font-size: 12px;
   }
+}
+
+@media screen and (max-width: 576px) {
+    .timeline-button {
+        font-size: 16px;
+        width: 80%;
+        padding: 8px;
+        margin: 4px auto; 
+    }
 }
 </style>
   

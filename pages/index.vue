@@ -53,6 +53,13 @@ export default {
   --title-font: 'anton', sans-serif;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 body {
   font-family: var(--body-font);
 /*   color: var(--body-color); */

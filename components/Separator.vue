@@ -82,11 +82,14 @@ export default {
 
 @media (max-width: 600px) {
   .separator:first-child {
-    margin-right: 50px;
+    margin-right: 30px;
   }
 
+  .section-title h2{
+    font-size: 40px;
+  }
   .separator:last-child {
-    margin-left: 50px;
+    margin-left: 30px;
   }
 }
 </style>

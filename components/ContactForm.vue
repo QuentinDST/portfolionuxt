@@ -149,4 +149,21 @@ button {
   margin-top: 20px;
   color: rgb(16, 165, 16);
 }
+
+@media screen and (max-width: 700px) {
+    .form-row {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .form-group textarea{
+        height: 150px;
+    }
+}
 </style>

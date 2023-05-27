@@ -83,5 +83,25 @@
 .social-icons a:hover{
     color: var(--yellow-color) !important;
 }
+
+@media screen and (max-width: 970px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-link {
+        margin: 5px 0;
+    }
+
+    .separator {
+        width: 50%;
+        margin: 20px auto;
+    }
+}
 </style>
   

@@ -74,13 +74,15 @@ export default {
 
 .projects-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .project-card {
+    flex: 0 0 auto;
     width: calc(33.33% - 60px);
-    margin-bottom: 20px;
+    margin: 0 30px 50px 30px;
+    box-sizing: border-box;
 }
 
 .project-card:hover {
@@ -159,6 +161,19 @@ export default {
 
 .project-card:hover .overlay {
     opacity: 1;
+}
+
+@media screen and (max-width: 992px) {
+    .project-card {
+        width: calc(50% - 60px);  
+}
+
+@media screen and (max-width: 576px) {
+    .project-card {
+        width: 100%;  
+        margin: 0 0 60px 0;
+    }
+}
 }
 </style>
   
