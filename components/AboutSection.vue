@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import profileImage from '@/assets/images/me.png';
+import profileImage from '@/assets/images/avatar.jpg';
 
 export default {
   data() {
