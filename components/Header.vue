@@ -143,6 +143,9 @@ header {
 
 
 @media (max-width: 990px) {
+    .nav-link {
+        margin-left: 0;
+    }
     .navbar-collapse {
         background-color: rgba(0, 0, 0, 0.7);
         position: fixed;
@@ -158,8 +161,8 @@ header {
     }
 
     .header-title h1 {
-    margin-top: 110px;
-}
+        margin-top: 110px;
+    }
 
     .navbar-collapse {
         transform: translateY(20px);

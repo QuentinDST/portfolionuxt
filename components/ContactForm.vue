@@ -94,6 +94,7 @@ export default {
   align-items: center;
   height: 500px;
   margin-bottom: 100px;
+  
 }
 
 .form-container {
@@ -151,7 +152,12 @@ button {
 }
 
 @media screen and (max-width: 700px) {
-    .form-row {
+
+  .container{
+    margin-top: 90px;
+    margin-bottom: 150px;
+  }
+  .form-row {
         flex-direction: column;
         align-items: center;
         margin-bottom: 30px;
