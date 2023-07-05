@@ -3,14 +3,14 @@
         'background-image': backgroundImage, 'background-size': 'cover',
         'background-position': 'center',
         'background-repeat': 'no-repeat',
-        width: '100vw',
+        width: '100%',
         height: '100vh'
     }">
         <b-navbar toggleable="lg" type="dark" class="justify-content-center custom-navbar placeholder">
             <b-navbar-toggle target="nav-collapse" class="mx-auto"></b-navbar-toggle>
             <b-collapse id="nav-collapse" is-nav v-model="isNavOpen">
                 <b-navbar-nav class="text-center w-100">
-                    <b-nav-item href="#about" class="nav-link mx-3">A propos</b-nav-item>
+                    <b-nav-item href="#about" class="nav-link mx-3">About</b-nav-item>
                     <b-nav-item href="#skills" class="nav-link mx-3">Skills</b-nav-item>
                     <b-nav-item href="#timeline" class="nav-link mx-3">Formation</b-nav-item>
                     <b-nav-item href="#portfolio" class="nav-link mx-3">Portfolio</b-nav-item>
@@ -19,6 +19,7 @@
             </b-collapse>
         </b-navbar>
         <div class="header-title" :class="{ 'hide-title': isNavOpen }">
+            <img src="@/assets/images/logoqd.jpg" alt="Logo" class="logo-image">
             <h1 class="text-fade-in">DEV.<br>
                 WEB<br>
                 JUNIOR<br>
@@ -58,6 +59,11 @@ export default {
 </script>
 
 <style scoped>
+
+header{
+    margin: 0;
+    padding: 0;
+}
 .placeholder {
     height: 69px;
 }
@@ -72,7 +78,6 @@ export default {
 }
 
 header {
-    margin-bottom: 100px;
     background-color: black;
 }
 
@@ -93,6 +98,11 @@ header {
     color: var(--white-color) !important;
 }
 
+.logo-image {
+    width: 100px;
+    height: 100px; 
+    margin-right: 10px;
+}
 .b-nav-item {
     flex-grow: 1;
 }
@@ -114,10 +124,10 @@ header {
 .header-title {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    margin-top: 170px;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
+    margin-top: 150px;
 }
 
 .header-title h1 {

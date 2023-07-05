@@ -1,196 +1,203 @@
 <template>
-  <section class="container-fluid">
-    <div class="row section-skill justify-content-center">
-      <div class="chevron1"></div>
-      <div class="chevron2"></div>
-      <div class="col-md-12 col-lg-2 text-center tools">
-        <div>
-          <h2 class="skill-title">Front-end</h2>
-        </div>
-        <div>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JAVASCRIPT</li>
-            <li>RESPONSIVE</li>
-          </ul>
-        </div>
-      </div>
+  <section class="container-fluid full-width">
+    <div class="boxed-content">
+      <div class="card-skills-container">
 
-      <div class="col-md-12 col-lg-2 text-center tools">
-        <div>
-          <h2 class="skill-title">Tools</h2>
-        </div>
-        <div>
-          <ul>
-            <li>GITHUB</li>
-            <li>BOOTSRAP</li>
-            <li>FIGMA</li>
-            <li>VSCODE</li>
+        <div class="card" v-for="(card, index) in cards" :key="index">
+          <div class="header">
+            <img :src="card.svgPath" class="icon" />
+            <h2 class="title">{{ card.title }}</h2>
+          </div>
+          <ul class="list">
+            <li v-for="(item, i) in card.listItems" :key="i">
+              <p>{{ item.name }}</p>
+              <div class="circles">
+                <div v-for="n in 10" :key="n" :class="n <= item.level ? 'checked' : 'unchecked'"></div>
+              </div>
+            </li>
           </ul>
         </div>
-      </div>
 
-      <div class="col-md-12 col-lg-2 text-center tools">
-        <div>
-          <h2 class="skill-title">Back-end</h2>
-        </div>
-        <div>
-          <ul>
-            <li>PHP</li>
-            <li>BASE DE DONNEE</li>
-            <li>...</li>
-            <li>...</li>
-          </ul>
-        </div>
       </div>
-      <div class="chevron3"></div>
-      <div class="chevron4"></div>
     </div>
   </section>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      cards: [
+        {
+          title: "Langages",
+          listItems: [
+            { name: "HTML 5", level: 9 },
+            { name: "CSS 3", level: 8 },
+            { name: "JavaScript", level: 6 },
+            { name: "PHP", level: 7 },
+          ],
+          svgPath: require('@/assets/svg/code-solid.svg')
+        },
+        {
+          title: "Base de Données",
+          listItems: [
+            { name: "Merise MCD", level: 7 },
+            { name: "SQL", level: 8 },
+            { name: "MYSQL", level: 8 },
+            { name: "HeidiSQL", level: 7 },
+          ],
+          svgPath: require('@/assets/svg/database-solid.svg')
+        },
+        {
+          title: "CMS",
+          listItems: [
+            { name: "WordPress", level: 7 },
+            { name: "PrestaShop", level: 3 },
+          ],
+          svgPath: require('@/assets/svg/wordpress.svg')
+        },
+        {
+          title: "Outils",
+          listItems: [
+            { name: "VSCode", level: 8 },
+            { name: "Git", level: 6 },
+            { name: "FIGMA", level: 6 },
+            { name: "WP-CLI", level: 4 },
+          ],
+          svgPath: require('@/assets/svg/screwdriver-wrench-solid.svg')
+        },
+        {
+          title: "FrameWork FRONT",
+          listItems: [
+            { name: "Vue.Js", level: 6 },
+            { name: "Nuxt.Js", level: 7 },
+          ],
+          svgPath: require('@/assets/svg/node-js.svg')
+        },
+        {
+          title: "Framework BACK",
+          listItems: [
+            { name: "Symfony", level: 7 },
+
+          ],
+          svgPath: require('@/assets/svg/symfony.svg')
+        },
+        {
+          title: "WORKFLOW",
+          listItems: [
+            { name: "Méthode Agile", level: 6 },
+            { name: "POO", level: 6 },
+            { name: "MVC", level: 6 },
+          ],
+          svgPath: require('@/assets/svg/stack-overflow.svg')
+        },
+      ],
+    };
+  },
+};
+</script>
+
 
 <style scoped>
-
-/*  CHEVRONS */
-
-.chevron1 {
-  width: 50px;
-  height: 4px;
-  background-color: var(--yellow-color);
-  position: relative;
-  top: -60px;
+.full-width {
+  width: 100%;
+  height: auto;
+  background-color: var(--body-color);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: #dddddd solid 1px;
+  margin-top: 90px;
+  margin-bottom: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.chevron1::before {
-  content: "";
-  width: 50px;
-  height: 4px;
-  background-color: var(--yellow-color);
-  top: 23px;
-  left: -25px;
-  transform: rotate(90deg);
-  position: absolute;
+.boxed-content {
+  width: 1410px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
-.chevron2 {
-  width: 20px;
-  height: 3px;
-  margin-top: 16px;
-  margin-left: 16px;
-  background-color: var(--yellow-color);
-  position: relative;
-  top: -60px;
-  left: -50px;
+.card-skills-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.chevron2::before {
-  content: "";
-  width: 20px;
-  height: 3px;
-  background-color: var(--yellow-color);
-  top: 9px;
-  left: -10px;
-  transform: rotate(90deg);
-  position: absolute;
+.card {
+  width: calc(25% - 60px);
+  height: auto;
+  box-sizing: content-box;
+  padding: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 50px;
 }
 
-.chevron3 {
-  bottom: -230px;
-  width: 50px;
-  height: 4px;
-  background-color: var(--yellow-color);
-  position: relative;
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.chevron3::before {
-  content: "";
-  width: 50px;
-  height: 4px;
-  background-color: var(--yellow-color);
-  bottom: 23px;
-  left: 25px;
-  transform: rotate(90deg);
-  position: absolute;
+.header img {
+  max-width: 30px;
+  max-height: 30px;
+  margin-right: 30px;
+  color: var(--yellow-color);
 }
 
-.chevron4 {
-  bottom: -230px;
-  width: 20px;
-  height: 3px;
-  margin-top: -18px;
-  margin-left: -40px;
-  background-color: var(--yellow-color);
-  position: relative;
+.icon-skill svg {
+  fill: var(--yellow);
+  font-size: 19px;
 }
 
-.chevron4::before {
-  content: "";
-  width: 20px;
-  height: 3px;
-  background-color: var(--yellow-color);
-  top: -9px;
-  margin-left: 10px;
-  transform: rotate(90deg);
-  position: absolute;
+.title {
+  margin-bottom: 0;
+  font-family: var(--title-font);
+  font-size: 28px;
+
 }
 
-.section-skill {
-  margin-top: 120px !important;
-  margin-bottom: 150px
-}
-
-.tools .skill-title {
-  font-family: 'anton';
-  font-weight: lighter;
-  color: var(--grey-color);
-  -webkit-transition: all 1s ease;
-}
-
-.section-skill,
-ul {
+.list {
   margin-top: 30px;
   padding: 0;
-}
-
-.section-skill,
-ul,
-li {
   list-style-type: none;
 }
 
-.skill,
-.tools,
-.quality {
-  list-style-type: none;
+.list p {
+  margin-bottom: 0;
+  font-family: var(--body-font2);
+  font-size: 18px;
 }
 
-.container .section-skill h2 {
-  text-align: center;
+.checked {
+  display: inline-block;
+  width: 8px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: var(--yellow-color);
 }
 
-.container .section-skill ul>li {
-  font-style: italic;
-  margin-top: 5px;
+.unchecked {
+  display: inline-block;
+  width: 8px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: var(--yellow-color-unchecked);
 }
 
-.tools {
-  transition: all 1.2s ease;
-}
+@media (max-width: 1024px) {
+  .card {
+    width: calc(100% - 60px);
+    margin: 20px auto;
+  }
 
-.tools:hover {
-  transform: scale(1.1);
-}
-
-.skill-title:hover {
-  cursor: pointer;
-  color: var(--black-color);
-}
-
-@media (max-width: 992px){
-  .chevron1, .chevron1::before, .chevron2, .chevron2::before, .chevron3, .chevron3::before, .chevron4, .chevron4::before{
-    display: none;
+  .card-skills-container {
+    flex-direction: column;
   }
 }
 </style>

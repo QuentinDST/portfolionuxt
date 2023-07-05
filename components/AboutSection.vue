@@ -1,26 +1,27 @@
 <template>
-  <div class="about-section">
-    <div class="container-fluid">
-      <div id="about" class="row align-items-center about-me">
-        <div class="col-md-6">
+  <div class="container-fluid full-width">
+    <div class="boxed-content">
+      <div class="section">
+
+        <div class="image-div">
           <div class="profile-image">
             <img v-if="showImage" :src="profileImage" alt="Profile Image" class="img-profil image-appear" />
           </div>
         </div>
-        <div class="col-md-6 text">
-          <p class="about-text"> Bonjour! Je m'appelle Quentin DESTRADE et j'ai 33 ans. </p>
-          <p class="about-text">Actuellement étudiant stagiaire au Greta Mende et inscrit à la formation
-            développeur web et web mobile, je
-            souhaite à terme développer mes compétences et les mettre à profit au service d'une entreprise dynamique,
-            avec une apétence certaine pour le front-end.
-          </p>
-          <p class="about-text">Sérieux, dynamique et souriant, je m’intègre facilement au travail en équipe et m’adapte à
-            toute situation.
-          </p>
+
+        <div id="about" class="row justify about-me">
+          <div class="col-12 text">
+            <p class="about-text"> Hello ! Je m'appelle Quentin DESTRADE et j'ai 33 ans. </p>
+            <p class="about-text">Actuellement étudiant stagiaire au Greta Mende et inscrit à la formation développeur web
+              et web mobile, je souhaite à terme développer mes compétences et les mettre à profit au service d'une
+              entreprise dynamique, avec une apétence certaine pour le front-end.</p>
+            <p class="about-text">Sérieux, dynamique et souriant, je m’intègre facilement au travail en équipe et m’adapte
+              à toute situation.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -50,41 +51,74 @@ export default {
     }, options);
     observer.observe(document.querySelector('#about'));
   },
+
 };
 </script>
 
 <style scoped>
-
-.about-section{
-  margin-bottom: 150px;
-}
-.about-me {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.full-width {
+  margin-bottom: 100px;
+  border-top: #dddddd solid 1px;
+  border-bottom: #dddddd solid 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--body-color);
 }
 
-.profile-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 300px;
-  max-height: 300px;
-  border-radius: 100%;
-  overflow: hidden;
+.boxed-content {
+  width: 1410px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.profile-image img {
-  width: 100%;
+.left-div,
+.right-div {
+  flex: 1;
   height: 100%;
-  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+H2 {
+  font-family: var(--body-font2);
+  color: var(--black-color);
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+.left-text,
+.right-text {
+  margin-top: 20px;
+  font-family: var(--body-font2);
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.text-content {
+  margin: 0 150px;
+}
+
+.image-div {
+  flex: 0 0 auto;
+  height: 100%;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-div img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .about-text {
-  font-family: var(--body-font);
+  font-family: var(--body-font2);
+  font-weight: 400;
   font-size: 20px;
-  font-weight: bolder;
   margin-left: -150px;
   margin-right: 100px;
   display: flex;
@@ -94,6 +128,16 @@ export default {
 .profile-image img {
   opacity: 0;
   animation: fadeIn 4s ease-in forwards;
+}
+
+.img-profil {
+  border-radius: 100%;
+}
+
+.about-me {
+  width: 1140px;
+  margin: 0 auto;
+  margin-bottom: 100px;
 }
 
 /* KEY FRAMES */

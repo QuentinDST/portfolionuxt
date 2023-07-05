@@ -1,28 +1,31 @@
 <template>
-    <section class="container timeline-box">
-        <div class="buttons">
-      <button
-        class="timeline-button"
-        @click="showExperience = true; showEducation = false"
-      >
-        EXPERIENCES
-      </button>
-      <button
-        class="timeline-button"
-        @click="showExperience = false; showEducation = true"
-      >
-        DIPLOMES
-      </button>
-    </div>
-        <div class="timeline">
-            <div class="timeline-items">
-                <div class="timeline-item" v-for="item in timelineData" :key="item.id" :class="{ experience: item.type === 'experience', education: item.type === 'education' }"
-                    v-show="(item.type === 'experience' && showExperience) || (item.type === 'education' && showEducation)">
-                    <div class="timeline-icon"></div>
-                    <div class="timeline-content">
-                        <h2>{{ item.title }}</h2>
-                        <p>{{ item.date }}</p>
-                        <p>{{ item.content }}</p>
+    <section class="container-fluid timeline-box">
+        <div class="boxed-content">
+            <div class="buttons">
+                <button class="timeline-button" @click="showExperience = true; showEducation = false">
+                    EXPERIENCES
+                </button>
+                <button class="timeline-button" @click="showExperience = false; showEducation = true">
+                    DIPLOMES
+                </button>
+            </div>
+            <div class="timeline">
+                <div class="timeline-items">
+                    <div class="timeline-item" v-for="item in timelineData" :key="item.id"
+                        :class="{ experience: item.type === 'experience', education: item.type === 'education' }"
+                        v-show="(item.type === 'experience' && showExperience) || (item.type === 'education' && showEducation)">
+                        <div class="timeline-icon"></div>
+                        <div class="timeline-content">
+                            <div class="content-title">
+                                <h2>{{ item.title }}</h2>
+                            </div>
+                            <div class="content-date">
+                                <p>{{ item.date }}</p>
+                            </div>
+                            <div class="content-description">
+                                <p>{{ item.content }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -37,9 +40,11 @@ export default {
             showExperience: true,
             showEducation: false,
             timelineData: [
-                { id: 1, type: 'experience', title: 'Patissier', date: '2012 - 2019', content: 'Patissier' },
-                { id: 2, type: 'education', title: 'Baccalauréat', date: '2007 - Bac littéraire', content: 'Options Théatre' },
-                { id: 3, type: 'education', title: 'Developpeur Web', date: '2023 - Developpeur Web & Web mobile', content: 'Greta Mende' },
+                { id: 1, type: 'experience', title: 'Assistant dirigeant d\'entreprise artisanale', date: '2012 - 2021', content: 'Patisserie' },
+                { id: 3, type: 'experience', title: 'Developpeur Web', date: '2023', content: 'Stagiaire développeur/intégrateur chez BM-Services durant 12 Semaines' },
+                { id: 4, type: 'education', title: 'Baccalauréat', date: '2006 - 2007', content: 'Options Théatre' },
+                { id: 5, type: 'education', title: 'Préparation Licence de droit', date: '2007 -2008', content: 'UFR Droit Montpellier 34000' },
+                { id: 6, type: 'education', title: 'Titre Professionnel Developpeur Web & Web mobile', date: '2023', content: 'Greta Mende' },
             ]
         }
     }
@@ -47,15 +52,22 @@ export default {
 </script>
   
 <style scoped>
+.boxed-content {
+    max-width: 1410px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 
-.timeline-box{
+.timeline-box {
     margin-top: 90px;
     margin-bottom: 60px;
     background-color: var(--body-color);
-    border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: #dddddd solid 1px;
     padding: 50px 50px 200px 50px;
+    height: 60vh;
 }
+
 .buttons {
     display: flex;
     justify-content: center;
@@ -90,13 +102,27 @@ export default {
     color: white;
 }
 
+@keyframes gradient {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: 0 100%;
+    }
+}
+
 .timeline:before {
     content: '';
     position: absolute;
     top: 24px;
     width: 100%;
-    height: 2px;
-    background: var(--yellow-color);
+    height: 4px;
+    background: var(--dark-gray-color);
+    background: linear-gradient(270deg, transparent 30%, var(--yellow-color), transparent 60%);
+    background-size: 200% 200%;
+    animation: gradient 6s linear infinite;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-items {
@@ -122,25 +148,67 @@ export default {
 
 .timeline-content {
     position: absolute;
-    top: 50px;
+    top: 80px;
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
 }
 
-@media (max-width: 768px) {
-  .buttons {
+.content-title, .content-date, .content-description {
+    flex: 1;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-  }
+    justify-content: center;
+    height: 100%; 
+}
 
-  .timeline-content H2 {
-    font-size: 16px;
-  }
+.content-title {
+    flex: 0.4;
+}
 
-  .timeline-content{
-    font-size: 12px;
-  }
+.content-title H2{
+    font-family: var(--title-font);
+    color: var(--grey-color);
+    font-weight: lighter;
+}
+.content-date, .content-description {
+    flex: 0.3;
+}
+
+.content-date p {
+    font-size: 20px;
+    font-family: var(--body-font2);
+}
+
+.content-description {
+    font-size: 20px;
+    font-family: var(--body-font2);
+}
+
+
+
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .content-title H2 {
+        font-size: 16px;
+    }
+
+    .content-description p {
+        font-size: 12px;
+    }
+
+    .timeline-box{
+        height: 70vh;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -148,8 +216,21 @@ export default {
         font-size: 16px;
         width: 80%;
         padding: 8px;
-        margin: 4px auto; 
+        margin: 4px auto;
     }
+
+    .content-title H2 {
+        font-size: 14px;
+    }
+
+    .content-description p {
+        font-size: 12px;
+    }
+
+    .content-date p {
+    font-size: 10px;
+    font-family: var(--body-font2);
+}
 }
 </style>
   

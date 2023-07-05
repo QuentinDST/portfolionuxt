@@ -1,45 +1,32 @@
 <template>
-  <div class="container">
-    <div class="form-container">
-      <form accept-charset="UTF-8" v-on:submit.prevent="onSubmit()" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label class="label" for="name">Nom</label>
-            <input
-              id="name"
-              type="text"
-              v-model="name"
-              class="form-control"
-              placeholder="Name"
-              required="required"
-            >
+  <div class="container-fluid full-width">
+    <div class="boxed-content">
+      <div class="form-container">
+        <form accept-charset="UTF-8" v-on:submit.prevent="onSubmit()" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="label" for="name">Nom</label>
+              <input id="name" type="text" v-model="name" class="form-control" placeholder="Name" required="required">
+            </div>
+            <div class="form-group">
+              <label class="label" for="firstname">Prénom</label>
+              <input id="firstname" type="text" v-model="firstname" class="form-control" placeholder="Prénom">
+            </div>
           </div>
           <div class="form-group">
             <label class="label" for="email">Adresse email</label>
-            <input
-              id="email"
-              type="email"
-              v-model="email"
-              class="form-control"
-              placeholder="Email"
-            >
+            <input id="email" type="email" v-model="email" class="form-control" placeholder="Email">
           </div>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea
-            id="message"
-            type="text"
-            v-model="message"
-            class="form-control"
-            placeholder="Message"
-            required="required"
-          ></textarea>
-        </div>
-        <hr>
-        <div class="success" v-if="isSuccess">Nous avons bien reçu votre soumission, merci !</div>
-        <button type="submit">Envoyer</button>
-      </form>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" type="text" v-model="message" class="form-control" placeholder="Message"
+              required="required"></textarea>
+          </div>
+          <hr>
+          <div class="success" v-if="isSuccess">Nous avons bien reçu votre soumission, merci !</div>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
     </div>
   </div>
 </template>
@@ -88,22 +75,26 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.full-width {
+  height: 500px;
+  background-color: var(--body-color);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
-  margin-bottom: 100px;
-  
+  margin-top: 90px; 
+}
+
+.boxed-content {
+  width: 1410px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-container {
-  width: 100%;
-  max-width: 800px;
-  padding: 50px;
-  background-color: var(--body-color);
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
 }
 
 .form-row {
@@ -121,7 +112,7 @@ label {
   font-size: 20px;
 }
 
-.label{
+.label {
   margin-left: 3px;
 }
 
@@ -153,23 +144,30 @@ button {
 
 @media screen and (max-width: 700px) {
 
-  .container{
+  .full-width{
+    height: 90vh;
+  }
+  .container {
     margin-top: 90px;
     margin-bottom: 150px;
   }
+
+  .form-container{
+    width: 90%;
+  }
   .form-row {
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 30px;
-    }
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
 
-    .form-group {
-        width: 95%;
-        margin: 0 auto;
-    }
+  .form-group {
+    width: 100%;
+    margin: 0 auto;
+  }
 
-    .form-group textarea{
-        height: 150px;
-    }
+  .form-group textarea {
+    height: 150px;
+  }
 }
 </style>

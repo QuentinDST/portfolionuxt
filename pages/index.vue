@@ -46,23 +46,27 @@ export default {
 :root {
   --white-color: #fff;
   --yellow-color: #E1B648;
+  --yellow-color-timeline: #997313;
+  --yellow-color-unchecked: #f0e0ba;
   --black-color: #131313;
   --grey-color: #6A6464;
   --body-color: #fafafa;
   --body-font: 'Quattrocento Sans', sans-serif;
+  --body-font2: 'Montserrat', sans-serif;
   --title-font: 'anton', sans-serif;
 }
+
 
 body, html {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--body-font);
-/*   color: var(--body-color); */
+  overflow-x: hidden;
 }
 
 html {

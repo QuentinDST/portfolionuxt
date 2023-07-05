@@ -5,7 +5,7 @@ module.exports = {
   head: {
     title: 'portfolio',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'fr'
     },
     meta: [
       { charset: 'utf-8' },
@@ -63,7 +63,14 @@ module.exports = {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    '@nuxtjs/google-fonts',
   ],
+
+  googleFonts: {
+    families: {
+      'Montserrat': [400, 700]
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

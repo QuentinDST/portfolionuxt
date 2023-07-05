@@ -1,5 +1,5 @@
 <template>
-  <section class="container" :class="{ 'appear': isVisible }">
+  <section class="container separator-container" :class="{ 'appear': isVisible }">
     <div class="row justify-content-center align-items-center separator-box">
       <div class="col-1 separator"></div>
       <div class="col-auto section-title text-center mb-5">
@@ -25,7 +25,7 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
-    this.handleScroll(); // Check initial visibility
+    this.handleScroll();
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll);
