@@ -65,7 +65,7 @@ export default {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-bottom: #dddddd solid 1px;
     padding: 50px 50px 200px 50px;
-    height: 60vh;
+    height: 65vh;
 }
 
 .buttons {
@@ -149,7 +149,7 @@ export default {
 .timeline-content {
     position: absolute;
     top: 80px;
-    width: 100%;
+    width: 80%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -174,6 +174,7 @@ export default {
     font-family: var(--title-font);
     color: var(--grey-color);
     font-weight: lighter;
+    font-size: 26px;
 }
 .content-date, .content-description {
     flex: 0.3;

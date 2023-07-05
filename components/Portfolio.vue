@@ -49,6 +49,43 @@ export default {
                     description: 'Site statique réalisé en HTML et CSS',
                     link: 'https://flowershenry.netlify.app'
                 },
+                {
+                    id: 4,
+                    image: require('@/assets/images/gretawp.png'),
+                    title: 'Greta Formation',
+                    description: 'Site dynamique réalisé avec WP et PHP',
+                    link: 'https://greta.lopia.fr/'
+                },
+                {
+                    id: 5,
+                    image: require('@/assets/images/bookmarks.png'),
+                    title: 'BookMarks',
+                    description: 'Site dynamique réalisé avec HTML, CSS, PHP',
+                },
+                {
+                    id: 6,
+                    image: require('@/assets/images/starwas.png'),
+                    title: 'Starwas',
+                    description: 'Site dynamique réalisé avec le Framework NuxtJs ',
+                },
+                {
+                    id: 7,
+                    image: require('@/assets/images/vqagame.png'),
+                    title: 'VQAGame',
+                    description: 'Site dynamique réalisé avec le Framework Symfony ',
+                },
+                {
+                    id: 8,
+                    image: require('@/assets/images/soulagess.png'),
+                    title: 'Page Autobigraphique',
+                    description: 'Site Statique représentant une page autobiographique ',
+                },
+                {
+                    id: 9,
+                    image: require('@/assets/images/truites.png'),
+                    title: 'Les truites de Saint Frézal',
+                    description: 'Site Wordpress réalisé avec Elementor Pro ',
+                },
             ],
         };
     },

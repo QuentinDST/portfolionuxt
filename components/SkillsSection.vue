@@ -200,4 +200,10 @@ export default {
     flex-direction: column;
   }
 }
+
+@media (max-width: 800px) {
+  .full-width {
+  margin-bottom: 45px;
+  }
+}
 </style>
