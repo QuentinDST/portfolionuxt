@@ -11,11 +11,9 @@
       <div id="about" class="about-div">
         <div class="about-me">
           <h1 class="about-title"> About. </h1>
-          <p class="about-subtitle"> Hi ! Je m'appelle Quentin DESTRADE, j'ai 33 ans. </p>
-          <p class="about-subtitle">Animé par la recherche de solutions efficientes, performantes et esthétique, je suis
-            un developpeur alliant à la fois Front & Back. En quête constant de créativité et de technicité, mon objectif
-            est de pouvoir créer des applications dynamique et moderne.</p>
-          <p class="about-subtitle">Ma motivation et mon sens du détail me permettent aujourd'hui de livrer des résultats
+          <p class="about-subtitle"> Hi ! Je m'appelle Quentin DESTRADE, développeur web fullstack junior. </p>
+          <p class="about-subtitle">Animé par la recherche de solutions efficientes, performantes et esthétique, j'apprécie de pouvoir transformer mes idées en réalité numérique. Alliant créativité et technicité, mon objectif est de pouvoir livrer des applications dynamique, moderne et sécurisée.</p>
+          <p class="about-subtitle">Ma motivation et mon sens du détail me permettent aujourd'hui d'apporter des résultats
             audacieux et d'assurer une réponse sérieuse aux besoins de chaque projet.</p>
         </div>
       </div>
