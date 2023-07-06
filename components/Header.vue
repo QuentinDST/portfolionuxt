@@ -168,6 +168,7 @@ header {
         justify-content: center;
         transform: translateY(20px);
         margin-top: 200px;
+        z-index: 9999;
     }
 
     .header-title h1 {
@@ -186,5 +187,10 @@ header {
     header {
         background-position: center;
     }
+
+    .text-fade-in{
+        z-index: 1;
+    }
+
 }
 </style>

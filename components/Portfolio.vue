@@ -77,13 +77,13 @@ export default {
                 {
                     id: 8,
                     image: require('@/assets/images/soulagess.png'),
-                    title: 'Page Autobigraphique',
+                    title: 'Autobigraphie',
                     description: 'Site Statique représentant une page autobiographique ',
                 },
                 {
                     id: 9,
                     image: require('@/assets/images/truites.png'),
-                    title: 'Les truites de Saint Frézal',
+                    title: 'Woocommerce',
                     description: 'Site Wordpress réalisé avec Elementor Pro ',
                 },
             ],
@@ -93,6 +93,8 @@ export default {
 </script>
   
 <style scoped>
+
+
 .projects {
     margin-top: 90px;
     margin-bottom: 70px;
@@ -113,6 +115,9 @@ export default {
     margin-bottom: 100px;
 }
 
+.section-title h2{
+    font-family: var(--title-font);
+}
 .projects-container {
     width: 100%;
     display: flex;
@@ -155,7 +160,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    width: 70%;
+    width: 80%;
     height: 100%;
     background: var(--yellow-color);
     transition: .8s;

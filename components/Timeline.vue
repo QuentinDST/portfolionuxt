@@ -153,17 +153,16 @@ export default {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
+    justify-content: space-between;
+    height: 250px;
 }
 
 .content-title, .content-date, .content-description {
-    flex: 1;
+    height: 33%;
     display: flex;
-    flex-direction: column;
+    flex-direction: center;
     justify-content: center;
-    height: 100%; 
+    align-items: center;
 }
 
 .content-title {
@@ -208,7 +207,7 @@ export default {
     }
 
     .timeline-box{
-        height: 70vh;
+        height: 80vh;
     }
 }
 
@@ -220,16 +219,23 @@ export default {
         margin: 4px auto;
     }
 
-    .content-title H2 {
-        font-size: 14px;
+    .timeline-content{
+        height: 170px;
     }
 
-    .content-description p {
+    .content-title .content-date .content-description {
+        height: 33%;
+    }
+    .content-title H2 {
         font-size: 12px;
     }
 
+    .content-description p {
+        font-size: 10px;
+    }
+
     .content-date p {
-    font-size: 10px;
+    font-size: 12px;
     font-family: var(--body-font2);
 }
 }
